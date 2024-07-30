@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Extractor</title>
+     <style>
+        /* Styling for the entire body to use a simple, centered layout */
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Add some margin to the form */
+
+        form {
+            margin: 20px 0;
+        }
+
+        /* Styling for the progress bar container */
+
+        #progress-container {
+            display: none;
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-top: 20px;
+        }
+
+        /* Styling for the progress bar itself */
+
+        #progress-bar {
+            width: 1%;
+            height: 30px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        /* Initial styling for error and success messages */
+
+        #error-message, #success-message {
+            display: none;
+
+        }
+
+        /* Specific styling for success messages */
+
+        #success-message {
+            color: green;
+        }
+
+        /* Specific styling for error messages */
+
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload a Video & Extract the Audio</h2>
+
+    <!-- Form for uploading video files -->
+    <form id="upload-form" enctype="multipart/form-data">
+
+        <!-- Input for selecting video file -->
+        <input type="file" id="video-file" name="video-file" accept=".mp4, .mov" required>
+
+        <!-- Button to submit the form and start extraction -->
+        <button type="submit">Extract That Audio.. NOW! </button>
+    </form>
+
+    <!-- Container for the progress bar -->
+    <div id="progress-container">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <!-- Section to display download link after extraction -->
+    <div id="download-link" style="display: none;">
+        <h2>Download Extracted Audio</h2>
+        <button id="download-button">Download Audio</button>
+    </div>
+
+    <!-- Loading message while processing -->
+    <div id="loading" style="display: none;">Processing...</div>
+
+    <!-- Error message section -->
+    <div id="error-message">Error: Could not extract audio. Please try again.</div>
+
+    <!-- Success message section -->
+    <div id="success-message">Audio extracted successfully!</div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
