@@ -18,3 +18,5 @@ Backend  <---- Flask, Python, Javascript
 Hosting  <---- Hosted locally for now.. Thinking of Heroku, Amazon, Github.. Not quite sure yet?
 
 I've had no issue running this locally and having free access to audio extraction from provided video.
+
+UPDATE 7/30/24 : Currently working on adding transcription feature while audio is being played using Google Cloud API
